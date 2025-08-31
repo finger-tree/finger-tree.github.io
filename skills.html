@@ -1,18 +1,31 @@
 <!DOCTYPE html>
-<html lang="en">
+<html language="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Skills - My Portfolio</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Skills — My Portfolio</title>
     <link rel="stylesheet" href="css/style.css">
+    <!-- Prism syntax highlighting -->
+    <link href="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/themes/prism-tomorrow.min.css" rel="stylesheet" />
+    <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/prism.min.js"></script>
+    <!-- load extra languageuages -->
+    <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-python.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-c.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-cpp.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-java.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-javascript.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-sql.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-markup.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-css.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-bash.min.js"></script>
+
 </head>
 
 <body>
-    <!-- Navbar -->
     <header>
         <nav class="navbar">
-            <div class="logo">⚗️ MyPortfolio</div>
+            <div class="logo">🌿 MyPortfolio</div>
             <ul class="nav-links">
                 <li><a href="index.html">Home</a></li>
                 <li><a href="projects.html">Projects</a></li>
@@ -23,14 +36,200 @@
         </nav>
     </header>
 
-    <!-- Bubble Canvas -->
-    <section class="skills-bubbles">
-        <canvas id="bubbleCanvas"></canvas>
-        <div id="infoPanel" class="info-panel"></div>
-    </section>
+    <main class="skills-main">
+        <h1>Skills & Shorts</h1>
+        <p class="lead">snippets matches confidence level</p>
 
+        <section class="cards-grid">
 
-    <script src="js/skills-bubbles.js"></script>
+            <!-- PYTHON -->
+            <article class="card">
+                <img class="logo" src="assets/python.png" alt="Python">
+                <h3>Python</h3>
+                <pre><code class="language-python">def egcd(a,b):
+    if b==0: return (a,1,0)
+    g,x1,y1 = egcd(b, a % b)
+    return (g, y1, x1 - (a//b)*y1)
+
+# example
+g,x,y = egcd(240,46)
+print(g,x,y)</code></pre>
+            </article>
+
+            <!-- C -->
+            <article class="card">
+                <img class="logo" src="assets/c.png" alt="C">
+                <h3>C</h3>
+                <pre><code class="language-c">#include &lt;stdio.h&gt;
+typedef long long ll;
+ll egcd(ll a,ll b,ll *x,ll *y){
+  if(b==0){ *x=1; *y=0; return a; }
+  ll x1,y1;
+  ll g = egcd(b, a%b, &x1, &y1);
+  *x = y1;
+  *y = x1 - (a/b)*y1;
+  return g;
+}
+int main(){
+  ll x,y; printf("%lld\n", egcd(240,46,&x,&y)); printf("%lld %lld\n",x,y);
+}</code></pre>
+            </article>
+
+            <!-- C++ -->
+            <article class="card">
+                <img class="logo" src="assets/cpp.png" alt="C++">
+                <h3>C++ — (compact)</h3>
+                <pre><code class="language-cpp">#include &lt;iostream&gt;
+using ll = long long;
+tuple&lt;ll,ll,ll&gt; egcd(ll a,ll b){
+  if(b==0) return {a,1,0};
+  auto [g,x1,y1]=egcd(b,a%b);
+  return {g,y1,x1 - (a/b)*y1};
+}
+int main(){
+  auto [g,x,y]=egcd(240,46);
+  std::cout&lt;&lt;g&lt;&lt;' ' &lt;&lt;x&lt;&lt;' ' &lt;&lt;y&lt;&lt;'\n';
+}</code></pre>
+            </article>
+
+            <!-- JAVA -->
+            <article class="card">
+                <img class="logo" src="assets/java.png" alt="Java">
+                <h3>Java</h3>
+                <pre><code class="language-java">class EG {
+  static long[] egcd(long a,long b){
+    if(b==0) return new long[]{a,1,0};
+    long[] r = egcd(b,a%b);
+    return new long[]{r[0], r[2], r[1] - (a/b)*r[2]};
+  }
+  public static void main(String[]args){
+    long[] r = egcd(240,46);
+    System.out.println(r[0]+" "+r[1]+" "+r[2]);
+  }
+}</code></pre>
+            </article>
+
+            <!-- JAVASCRIPT -->
+            <article class="card">
+                <img class="logo" src="assets/javascript.png" alt="JavaScript">
+                <h3>JavaScript</h3>
+                <pre><code class="language-js">function egcd(a,b){
+  if(b===0) return [a,1,0];
+  const [g,x1,y1]=egcd(b,a%b);
+  return [g, y1, x1 - Math.floor(a/b)*y1];
+}
+// example:
+console.log(egcd(240,46));</code></pre>
+            </article>
+
+            <!-- SQL (Postgres function) -->
+            <article class="card">
+                <img class="logo" src="assets/sql.png" alt="SQL">
+                <h3>Postgres PL/pgSQL</h3>
+                <p>Example of a nested query to find employees earning above the department average:</p>
+                <pre><code class="language-sql">
+SELECT name, salary
+FROM employees e
+WHERE salary > (
+    SELECT AVG(salary)
+    FROM employees
+    WHERE dept_id = e.dept_id
+);
+  </code></pre>
+            </article>
+
+            <!-- HTML -->
+            <article class="card">
+                <img class="logo" src="assets/html.png" alt="HTML">
+                <h3>HTML</h3>
+                <pre><code class="language-html">&lt;!doctype html&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta charset="utf-8"&gt;&lt;/head&gt;
+&lt;body&gt;&lt;h1&gt;Hello, world!&lt;/h1&gt;&lt;/body&gt;&lt;/html&gt;</code></pre>
+            </article>
+
+            <!-- CSS -->
+            <article class="card">
+                <img class="logo" src="assets/css.png" alt="CSS">
+                <h3>CSS</h3>
+                <pre><code class="language-css">:root {
+  --pulse-color: #2ecc71;
+}
+
+.button {
+  background: var(--pulse-color);
+  color: white;
+  padding: 0.75rem 1.5rem;
+  border-radius: 8px;
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); opacity: 1; }
+  50% { transform: scale(1.1); opacity: 0.7; }
+  100% { transform: scale(1); opacity: 1; }
+}
+</code></pre>
+                <p class="muted">Use with: &lt;h1 class="hello"&gt;Hello&lt;/h1&gt;</p>
+            </article>
+
+            <!-- SHELL SCRIPT -->
+            <article class="card">
+                <img class="logo" src="assets/bash.png" alt="Shell">
+                <h3>Shell (Bash) — (iterative)</h3>
+                <pre><code class="language-sh">#!/bin/bash
+# Play a sound (use a system sound or a custom .mp3/.wav file)
+afplay ~/ost/prevail.m4a
+
+# Prompt user for journal entry using osascript with a 5-minute (300 seconds) timeout
+journal_entry=$(
+    osascript -e 'tell app "System Events" to display dialog "Enter your journal entry:" 
+    default answer "" buttons {"OK", "Cancel"} 
+    default button "OK" 
+    cancel button "Cancel" 
+    with title "Journal Prompt" giving up after 300' -e 
+    'if button returned of result is "OK" then' -e 
+    'text returned of result' -e 
+    'else' -e 
+    'return ""' 
+    -e 'end if')
+
+# If user provides an entry (not empty and not canceled), append it to /journal.log
+if [ -n "$journal_entry" ]; then
+    echo "$(date): $journal_entry" >> ~/journal.log
+fi</code></pre>
+            </article>
+
+            <!-- HACKERRANK -->
+            <article class="card">
+                <img class="logo" src="assets/hackerrank.png" alt="Hackerrank">
+                <h3>Hackerrank — Platform</h3>
+                <p>Competitive problem solving platform. Use it to practice algorithmic problems and keep profile links
+                    to your best submissions.</p>
+                <p class="muted">Tip: link to your profile or specific challenge solutions.</p>
+            </article>
+
+            <!-- CODEWARS -->
+            <article class="card">
+                <img class="logo" src="assets/codewars.png" alt="Codewars">
+                <h3>Codewars — Platform</h3>
+                <p>Training by kata. Good for demonstrating daily practice and small but clever solutions.</p>
+            </article>
+
+        </section>
+    </main>
+
+    <script>
+        // tiny client enhancement: click-to-copy code
+        document.addEventListener('click', e => {
+            const el = e.target.closest('pre');
+            if (!el) return;
+            const txt = el.innerText;
+            navigator.clipboard?.writeText(txt).then(() => {
+                el.classList.add('copied');
+                setTimeout(() => el.classList.remove('copied'), 900);
+            });
+        });
+    </script>
 </body>
 
 </html>
