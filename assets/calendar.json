@@ -1,0 +1,46 @@
+{
+  "events": [
+    {
+      "title": "1:1 with manager",
+      "description": "",
+      "category": "1:1",
+      "start": "2026-02-01T16:00:00",
+      "end": "2026-02-01T17:00:00"
+    },
+    {
+      "title": "1:1 with manager",
+      "description": "",
+      "category": "1:1",
+      "start": "2026-02-02T16:00:00",
+      "end": "2026-02-02T17:00:00"
+    },
+    {
+      "title": "Team standup",
+      "description": "Daily sync with the team.",
+      "category": "Meeting",
+      "start": "2026-02-02T09:00:00",
+      "end": "2026-02-02T10:30:00"
+    },
+    {
+      "title": "Code review",
+      "description": "Review PRs for main branch.",
+      "category": "Meeting",
+      "start": "2026-02-07T14:00:00",
+      "end": "2026-02-07T15:30:00"
+    },
+    {
+      "title": "Workshop – React patterns",
+      "description": "Internal workshop on React best practices.",
+      "category": "Workshop",
+      "start": "2026-02-10T10:00:00",
+      "end": "2026-02-10T12:00:00"
+    },
+    {
+      "title": "1:1 with manager",
+      "description": "",
+      "category": "1:1",
+      "start": "2026-02-18T16:00:00",
+      "end": "2026-02-18T17:00:00"
+    }
+  ]
+}

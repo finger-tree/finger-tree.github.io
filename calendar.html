@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Calendar - My Portfolio</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header>
+    <nav class="navbar">
+      <div class="logo">🪭 MyPortfolio</div>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="projects.html">Projects</a></li>
+        <li><a href="knowledge.html">Knowledge</a></li>
+        <li><a href="skills.html">Skills</a></li>
+        <li><a href="calendar.html" class="active">Calendar</a></li>
+        <li><a href="maintenance.html">Maintenance</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="calendar-page">
+    <h1>Calendar</h1>
+    <p class="calendar-lead">Events loaded from <code>assets/calendar.json</code></p>
+
+    <div class="calendar-controls">
+      <button type="button" class="btn calendar-nav" id="prevMonth" aria-label="Previous month">←</button>
+      <h2 class="calendar-month-title" id="monthTitle">February 2025</h2>
+      <button type="button" class="btn calendar-nav" id="nextMonth" aria-label="Next month">→</button>
+    </div>
+
+    <div class="calendar-wrap calendar-time-wrap">
+      <div class="calendar-time-header" id="calendarTimeHeader">
+        <div class="calendar-time-corner">Day</div>
+        <div class="calendar-time-hours" id="calendarTimeHours"></div>
+      </div>
+      <div class="calendar-time-body" id="calendarTimeBody"></div>
+    </div>
+
+    <p class="calendar-loading" id="calendarLoading">Loading calendar…</p>
+    <p class="calendar-error hidden" id="calendarError"></p>
+    <div class="calendar-tooltip hidden" id="calendarTooltip" role="tooltip"></div>
+  </main>
+  <script type="application/json" id="inline-calendar-json">
+    {
+      "events": [
+        {
+          "title": "Team standup",
+          "description": "Daily sync with the team.",
+          "category": "Meeting",
+          "start": "2026-02-02T09:00:00",
+          "end": "2026-02-02T10:30:00"
+        },
+        {
+          "title": "Code review",
+          "description": "Review PRs for main branch.",
+          "category": "Meeting",
+          "start": "2026-02-07T14:00:00",
+          "end": "2026-02-07T15:30:00"
+        },
+        {
+          "title": "Workshop – React patterns",
+          "description": "Internal workshop on React best practices.",
+          "category": "Workshop",
+          "start": "2026-02-10T10:00:00",
+          "end": "2026-02-10T12:00:00"
+        },
+        {
+          "title": "1:1 with manager",
+          "description": "",
+          "category": "1:1",
+          "start": "2026-02-18T16:00:00",
+          "end": "2026-02-18T17:00:00"
+        }
+      ]
+    }
+  </script>
+  <script src="js/calendar.js"></script>
+</body>
+</html>
