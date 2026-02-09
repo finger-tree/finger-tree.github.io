@@ -1,46 +1,410 @@
 {
   "events": [
     {
-      "title": "1:1 with manager",
-      "description": "",
-      "category": "1:1",
-      "start": "2026-02-01T16:00:00",
-      "end": "2026-02-01T17:00:00"
+      "title": "Self Open Documentation",
+      "description": "date data entry",
+      "category": "profile",
+      "start": "2026-02-09T11:00:00",
+      "end": "2026-02-09T14:00:00"
     },
     {
-      "title": "1:1 with manager",
-      "description": "",
-      "category": "1:1",
-      "start": "2026-02-02T16:00:00",
-      "end": "2026-02-02T17:00:00"
+      "title": "Self Open Documentation",
+      "description": "create calendar and maintenance page on github.io website",
+      "category": "profile",
+      "start": "2026-02-09T00:00:00",
+      "end": "2026-02-09T05:00:00"
     },
     {
-      "title": "Team standup",
-      "description": "Daily sync with the team.",
-      "category": "Meeting",
+      "title": "Dinner",
+      "description": "chicken lettuce mushroom rice, olive oil, kefir",
+      "category": "support",
+      "start": "2026-02-07T19:00:00",
+      "end": "2026-02-07T20:00:00"
+    },
+    {
+      "title": "5km",
+      "description": "26:20",
+      "category": "running",
+      "start": "2026-02-07T18:00:00",
+      "end": "2026-02-07T19:00:00"
+    },
+    {
+      "title": "ML window shopping",
+      "description": "gawking machine learning techniques online without actual work",
+      "category": "indecision",
+      "start": "2026-02-07T17:00:00",
+      "end": "2026-02-07T18:00:00"
+    },
+    {
+      "title": "Backprop notation review",
+      "description": "$(A \\otimes{} B)Vec(C) = Vec(BCA^T) \\leftrightarrow{} (A \\otimes B)[C] = BCA^T$",
+      "category": "mathematics - matrix calculus",
+      "start": "2026-02-07T16:00:00",
+      "end": "2026-02-07T17:00:00"
+    },
+    {
+      "title": "Deep learning review",
+      "description": "week 1 boring stuff",
+      "category": "uni module - deep learning",
+      "start": "2026-02-07T15:00:00",
+      "end": "2026-02-07T16:00:00"
+    },
+    {
+      "title": "System verification tutorial",
+      "description": "$(M, w) \\models \\Box \\Diamond \\neg p \\land \\Diamond \\Box (p \\leftrightarrow \\neg \\Box q)$",
+      "category": "uni module - system verification",
+      "start": "2026-02-07T13:00:00",
+      "end": "2026-02-07T15:00:00"
+    },
+    {
+      "title": "System verification reading",
+      "description": "kripke model, motivation, module information, theorem proving",
+      "category": "uni module - system verification",
+      "start": "2026-02-07T12:00:00",
+      "end": "2026-02-07T13:00:00"
+    },
+    {
+      "title": "Timesheet fillin",
+      "description": "job admin work",
+      "category": "job",
+      "start": "2026-02-07T11:00:00",
+      "end": "2026-02-07T12:00:00"
+    },
+    {
+      "title": "Morning support",
+      "description": "wake, meal, planning ect",
+      "category": "support",
+      "start": "2026-02-07T10:00:00",
+      "end": "2026-02-07T11:00:00"
+    },
+    {
+      "title": "part time",
+      "description": "peer support",
+      "category": "job",
+      "start": "2026-02-05T13:00:00",
+      "end": "2026-02-05T18:00:00"
+    },
+    {
+      "title": "Final year project",
+      "description": "NLPS unlearning measure",
+      "category": "uni module - final year project",
+      "start": "2026-02-04T23:00:00",
+      "end": "2026-02-04T23:59:59"
+    },
+    {
+      "title": "Late dinner",
+      "description": "pork ribs lettuce carrots rice, olive oil + peach",
+      "category": "support",
+      "start": "2026-02-04T22:00:00",
+      "end": "2026-02-04T23:00:00"
+    },
+    {
+      "title": "LSE function",
+      "description": "computation properties of LSE",
+      "category": "mathematics - ML",
+      "start": "2026-02-04T21:00:00",
+      "end": "2026-02-04T22:00:00"
+    },
+    {
+      "title": "Restiction theory",
+      "description": "admiring Wang Hong",
+      "category": "mathematics - restriction theory",
+      "start": "2026-02-04T20:00:00",
+      "end": "2026-02-04T21:00:00"
+    },
+    {
+      "title": "5km",
+      "description": "27:15",
+      "category": "running",
+      "start": "2026-02-04T18:00:00",
+      "end": "2026-02-04T19:00:00"
+    },
+    {
+      "title": "confusion",
+      "description": "unclear expansion on measurement",
+      "category": "crisis",
+      "start": "2026-02-04T16:00:00",
+      "end": "2026-02-04T18:00:00"
+    },
+    {
+      "title": "late lunch",
+      "description": "pork ribs mushroom carrot rice, mayonaise + grapes",
+      "category": "support",
+      "start": "2026-02-04T15:00:00",
+      "end": "2026-02-04T16:00:00"
+    },
+    {
+      "title": "Final year project",
+      "description": "organizing a lot of research",
+      "category": "uni module - final year project",
+      "start": "2026-02-04T13:00:00",
+      "end": "2026-02-04T15:00:00"
+    },
+    {
+      "title": "peer support prep",
+      "description": "Ciphers, tirplet space gcd algorithm",
+      "category": "job",
+      "start": "2026-02-04T09:00:00",
+      "end": "2026-02-04T11:00:00"
+    },
+    {
+      "title": "Dinner",
+      "description": "pork shoulder spniach mushroom rice, mayonaise",
+      "category": "support",
+      "start": "2026-02-02T19:00:00",
+      "end": "2026-02-02T21:00:00"
+    },
+    {
+      "title": "5km",
+      "description": "test route - 31:00",
+      "category": "running",
+      "start": "2026-02-02T18:00:00",
+      "end": "2026-02-02T19:00:00"
+    },
+    {
+      "title": "Group theory",
+      "description": "basics review",
+      "category": "mathematics - group theory",
+      "start": "2026-02-02T15:00:00",
+      "end": "2026-02-02T18:00:00"
+    },
+    {
+      "title": "System verification lecture",
+      "description": "introductions are boring if you have read them",
+      "category": "uni module - system verification",
       "start": "2026-02-02T09:00:00",
-      "end": "2026-02-02T10:30:00"
+      "end": "2026-02-02T11:00:00"
     },
     {
-      "title": "Code review",
-      "description": "Review PRs for main branch.",
-      "category": "Meeting",
-      "start": "2026-02-07T14:00:00",
-      "end": "2026-02-07T15:30:00"
+      "title": "Group theory",
+      "description": "straight reading",
+      "category": "mathematics - group theory",
+      "start": "2026-01-30T10:00:00",
+      "end": "2026-01-30T20:00:00"
     },
     {
-      "title": "Workshop – React patterns",
-      "description": "Internal workshop on React best practices.",
-      "category": "Workshop",
-      "start": "2026-02-10T10:00:00",
-      "end": "2026-02-10T12:00:00"
+      "title": "Group theory",
+      "description": "straight reading",
+      "category": "mathematics - group theory",
+      "start": "2026-01-29T10:00:00",
+      "end": "2026-01-29T20:00:00"
     },
     {
-      "title": "1:1 with manager",
-      "description": "",
-      "category": "1:1",
-      "start": "2026-02-18T16:00:00",
-      "end": "2026-02-18T17:00:00"
+      "title": "Group theory",
+      "description": "straight reading",
+      "category": "mathematics - group theory",
+      "start": "2026-01-28T10:00:00",
+      "end": "2026-01-28T20:00:00"
+    },
+    {
+      "title": "Group theory",
+      "description": "straight reading",
+      "category": "mathematics - group theory",
+      "start": "2026-01-27T10:00:00",
+      "end": "2026-01-27T20:00:00"
+    },
+    {
+      "title": "Group theory",
+      "description": "straight reading",
+      "category": "mathematics - group theory",
+      "start": "2026-01-26T10:00:00",
+      "end": "2026-01-26T20:00:00"
+    },
+    {
+      "title": "Group theory",
+      "description": "straight reading",
+      "category": "mathematics - group theory",
+      "start": "2026-01-25T10:00:00",
+      "end": "2026-01-25T20:00:00"
+    },
+    {
+      "title": "Group theory",
+      "description": "straight reading",
+      "category": "mathematics - group theory",
+      "start": "2026-01-24T10:00:00",
+      "end": "2026-01-24T20:00:00"
+    },
+    {
+      "title": "Group theory",
+      "description": "straight reading",
+      "category": "mathematics - group theory",
+      "start": "2026-01-23T10:00:00",
+      "end": "2026-01-23T20:00:00"
+    },
+    {
+      "title": "Group theory",
+      "description": "straight reading",
+      "category": "mathematics - group theory",
+      "start": "2026-01-22T10:00:00",
+      "end": "2026-01-22T20:00:00"
+    },
+    {
+      "title": "e km",
+      "description": "22:",
+      "category": "running",
+      "start": "2026-01-22T20:00:00",
+      "end": "2026-01-22T21:00:00"
+    },
+    {
+      "title": "Group theory",
+      "description": "straight reading",
+      "category": "mathematics - group theory",
+      "start": "2026-01-21T16:00:00",
+      "end": "2026-01-21T17:00:00"
+    },
+    {
+      "title": "Chess",
+      "description": "rapid ~ 1800",
+      "category": "culture",
+      "start": "2026-01-21T15:00:00",
+      "end": "2026-01-21T16:00:00"
+    },
+    {
+      "title": "Probability",
+      "description": "straight reading",
+      "category": "mathematics - probability",
+      "start": "2026-01-21T11:00:00",
+      "end": "2026-01-21T12:00:00"
+    },
+    {
+      "title": "Gradient unlearning",
+      "description": "straight reading",
+      "category": "mathematics - ML",
+      "start": "2026-01-20T16:00:00",
+      "end": "2026-01-20T17:00:00"
+    },
+    {
+      "title": "Chess",
+      "description": "rapid ~ 1700",
+      "category": "culture",
+      "start": "2026-01-21T15:00:00",
+      "end": "2026-01-20T16:00:00"
+    },
+    {
+      "title": "Topology",
+      "description": "straight reading",
+      "category": "mathematics - topology",
+      "start": "2026-01-20T13:00:00",
+      "end": "2026-01-20T14:00:00"
+    },
+    {
+      "title": "Probability",
+      "description": "straight reading",
+      "category": "mathematics - probability",
+      "start": "2026-01-20T11:00:00",
+      "end": "2026-01-20T12:00:00"
+    },
+    {
+      "title": "Piano",
+      "description": "3+2+4+5",
+      "category": "culture",
+      "start": "2026-01-20T10:00:00",
+      "end": "2026-01-20T11:00:00"
+    },
+    {
+      "title": "Chess",
+      "description": "radpid ~ 1700",
+      "category": "culture",
+      "start": "2026-01-19T14:00:00",
+      "end": "2026-01-19T15:00:00"
+    },
+    {
+      "title": "Complex analysis",
+      "description": "revision",
+      "category": "mathematics - complex analysis",
+      "start": "2026-01-19T13:00:00",
+      "end": "2026-01-19T14:00:00"
+    },
+    {
+      "title": "Probability",
+      "description": "revision",
+      "category": "mathematics - probability",
+      "start": "2026-01-19T12:00:00",
+      "end": "2026-01-19T13:00:00"
+    },
+    {
+      "title": "Piano",
+      "description": "custom scales",
+      "category": "culture",
+      "start": "2026-01-19T11:00:00",
+      "end": "2026-01-19T12:00:00"
+    },
+    {
+      "title": "Complex analysis",
+      "description": "revision",
+      "category": "mathematics - complex analysis",
+      "start": "2026-01-17T15:00:00",
+      "end": "2026-01-17T17:00:00"
+    },
+    {
+      "title": "Probability",
+      "description": "reading",
+      "category": "mathematics - probability",
+      "start": "2026-01-17T14:00:00",
+      "end": "2026-01-17T15:00:00"
+    },
+    {
+      "title": "Cookies and news",
+      "description": "your's just slacking",
+      "category": "slack",
+      "start": "2026-01-17T13:00:00",
+      "end": "2026-01-17T14:00:00"
+    },
+    {
+      "title": "Pandas",
+      "description": "practice revision",
+      "category": "programming - pandas",
+      "start": "2026-01-17T11:00:00",
+      "end": "2026-01-17T13:00:00"
+    },
+    {
+      "title": "Pandas",
+      "description": "kaggle pandas",
+      "category": "programming - pandas",
+      "start": "2026-01-16T17:00:00",
+      "end": "2026-01-16T18:00:00"
+    },
+    {
+      "title": "Piano",
+      "description": "random permutations",
+      "category": "culture",
+      "start": "2026-01-16T16:00:00",
+      "end": "2026-01-16T17:00:00"
+    },
+    {
+      "title": "Kaggle",
+      "description": "likely pandas",
+      "category": "programming - pandas",
+      "start": "2026-01-16T15:00:00",
+      "end": "2026-01-16T16:00:00"
+    },
+    {
+      "title": "Chess",
+      "description": "openings",
+      "category": "culture",
+      "start": "2026-01-16T13:00:00",
+      "end": "2026-01-16T14:00:00"
+    },
+    {
+      "title": "Self modifying code + machine learning",
+      "description": "exploration of idea",
+      "category": "programming - self modifying code",
+      "start": "2026-01-16T12:00:00",
+      "end": "2026-01-16T13:00:00"
+    },
+    {
+      "title": "Cookies and nothing",
+      "description": "just eating cookies in the library",
+      "category": "slack",
+      "start": "2026-01-16T11:00:00",
+      "end": "2026-01-16T12:00:00"
+    },
+    {
+      "title": "Neuron structure",
+      "description": "biology",
+      "category": "biology - neuroscience",
+      "start": "2026-01-16T10:00:00",
+      "end": "2026-01-16T11:00:00"
     }
   ]
 }

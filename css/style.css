@@ -497,15 +497,17 @@ pre.copied { outline: 3px solid rgba(46,204,113,0.15); transition: outline .15s 
   filter: brightness(1.1);
 }
 .calendar-event-bar-allday {
-  background: #333;
+  background: #545454;
   font-size: 0.7rem;
 }
 /* Activity type colors */
-.calendar-event-bar--meeting { background: #2563eb; }
-.calendar-event-bar--deadline { background: #dc2626; }
-.calendar-event-bar--workshop { background: #7c3aed; }
-.calendar-event-bar--holiday { background: #64748b; }
-.calendar-event-bar--1on1 { background: #0d9488; }
+.calendar-event-bar--reading { background: #2563eb; }
+.calendar-event-bar--practical { background: #009505; }
+.calendar-event-bar--support { background: #ff8c00; }
+.calendar-event-bar--crisis { background:rgb(255, 0, 0)0; }
+.calendar-event-bar--job { background:rgb(255, 0, 255)0; }
+.calendar-event-bar--running { background:rgb(0, 0, 112)0; }
+.calendar-event-bar--culture { background:rgb(255, 255, 0)0; }
 .calendar-event-bar-title {
   white-space: nowrap;
   overflow: hidden;

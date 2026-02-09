@@ -56,55 +56,26 @@
 
   function formatCounter(diff, options = {}) {
     const {
-      alwaysShowHours = false,
-      hideZeroUnits = true,
-      padSingleDigit = true
+        padSingleDigit = true
     } = options;
 
     const pad = (num) => padSingleDigit ? num.toString().padStart(2, '0') : num.toString();
 
-    const parts = [];
-
-    // Year (only show if > 0)
-    if (diff.year > 0) {
-      parts.push(`${pad(diff.year)}y`);
-    }
-
-    // Month (only if > 0 or we already have bigger units)
-    if (diff.month > 0 || parts.length > 0) {
-      parts.push(`${pad(diff.month)}m`);
-    }
-
-    // Day (show if > 0 or we have bigger units)
-    if (diff.day > 0 || parts.length > 0) {
-      parts.push(`${pad(diff.day)}d`);
-    }
-
-    // Hours (configurable)
-    if (diff.hour > 0 || alwaysShowHours || parts.length === 0) {
-      parts.push(`${pad(diff.hour)}h`);
-    }
-
-    // Minutes (almost always show)
-    if (diff.min > 0 || parts.length <= 1 || !hideZeroUnits) {
-      parts.push(`${pad(diff.min)}m`);
-    }
-
-    // Seconds (show when close or if nothing else)
-    if (diff.sec > 0 || parts.length <= 2 || !hideZeroUnits) {
-      parts.push(`${pad(diff.sec)}s`);
-    }
-
-    // If everything is zero, show at least 00s
-    if (parts.length === 0) {
-      parts.push("00s");
-    }
+    const parts = [
+        `${pad(diff.year)}y`,
+        `${pad(diff.month)}m`,
+        `${pad(diff.day)}d`,
+        `${pad(diff.hour)}h`,
+        `${pad(diff.min)}m`,
+        `${pad(diff.sec)}s`
+    ];
 
     return `${diff.sign} ${parts.join(' ')}`.trim();
-  }
+}
+   
 
   function daysSince(date) {
-    return (new Date() - date) / (24 * 60 * 60 * 1000);
+    return (Math.abs(date - new Date())) / (24 * 60 * 60 * 1000);
   }
 
   function rowClassForDays(days) {
@@ -187,8 +158,7 @@
       return `
         <li class="maintenance-item ${rowClass} ${!hasLast ? 'maintenance-item--none' : ''}" ${dataAttr}>
           <span class="maintenance-category">${escapeHtml(displayName)}</span>
-          <span class="maintenance-counter" aria-label="Time since last session">${counterContent}</span>
-          ${hasLast ? `<span class="maintenance-title">${escapeHtml(last.title)}</span>` : ''}
+          <span class="maintenance-counter" aria-label="Time since last session"></span>
         </li>
       `;
     }).join("");

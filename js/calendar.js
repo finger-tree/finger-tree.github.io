@@ -24,19 +24,20 @@
     });
   }
 
-  var ACTIVITY_TYPES = {
-    meeting: { label: "Meeting", class: "calendar-event-bar--meeting" },
-    deadline: { label: "Deadline", class: "calendar-event-bar--deadline" },
-    workshop: { label: "Workshop", class: "calendar-event-bar--workshop" },
-    holiday: { label: "Holiday", class: "calendar-event-bar--holiday" },
-    "1:1": { label: "1:1", class: "calendar-event-bar--1on1" },
-    default: { label: "Event", class: "" },
-  };
+
   function getActivityClass(ev) {
-    var key = (ev.category || "").toLowerCase().replace(/\s+/g, "");
-    if (key === "1:1" || key === "1on1") return ACTIVITY_TYPES["1:1"].class;
-    return (ACTIVITY_TYPES[key] || ACTIVITY_TYPES.default).class;
+    var category = (ev.category || "").toLowerCase();
+
+    if (category.includes("mathematics")) return "calendar-event-bar--reading";
+    if (category.includes("support")) return "calendar-event-bar--support";
+    if (category.includes("crisis")) return "calendar-event-bar--crisis";
+    if (category.includes("programming")) return "calendar-event-bar--practical";
+    if (category.includes("job")) return "calendar-event-bar--job";
+    if (category.includes("running")) return "calendar-event-bar--running";
+
+    return "";
   }
+
 
   function dateKey(d) {
     return d.getFullYear() + "-" + String(d.getMonth() + 1).padStart(2, "0") + "-" + String(d.getDate()).padStart(2, "0");
@@ -60,6 +61,11 @@
 
   function formatTime(d) {
     return d.toLocaleTimeString("en-GB", { hour: "2-digit", minute: "2-digit", hour12: false });
+  }
+
+  function containsLatex(text) {
+    if (!text) return false;
+    return /\$[^$]+\$/.test(text);
   }
 
   function renderTimeGrid(year, month) {
@@ -98,7 +104,7 @@
         var titleHtml = escapeHtml(ev.title);
         var details = "Start: " + formatTime(ev.start) + "\nEnd: " + (ev.end ? formatTime(ev.end) : "") + "\nTitle: " + ev.title + "\nDescription: " + (ev.description || "—") + "\nCategory: " + (ev.category || "—");
         var barClass = "calendar-event-bar " + (getActivityClass(ev) || "");
-        bodyHtml += '<div class="' + barClass.trim() + '" style="left:' + leftPct + "%;width:" + widthPct + '%;" data-details="' + escapeHtml(details).replace(/"/g, "&quot;") + '" title="' + escapeHtml(ev.title) + '">';
+        bodyHtml += '<div class="' + barClass.trim() + '" style="left:' + leftPct + "%;width:" + widthPct + '%;" data-details="' + details.replace(/"/g, "&quot;") + '" title="' + escapeHtml(ev.title) + '">';
         bodyHtml += '<span class="calendar-event-bar-title">' + titleHtml + "</span>";
         bodyHtml += "</div>";
       });
@@ -110,9 +116,34 @@
       el.addEventListener("mouseenter", function () {
         var details = el.getAttribute("data-details");
         if (!details) return;
-        calendarTooltip.innerHTML = details.split("\n").map(function (s) { return escapeHtml(s); }).join("<br>");
+
+        var lines = details.split("\n");
+        var html = [];
+
+        lines.forEach(function (line) {
+          // Detect Description line
+          if (line.startsWith("Description:")) {
+            var desc = line.replace("Description:", "").trim();
+
+            if (containsLatex(desc)) {
+              // LaTeX mode (do NOT escape)
+              html.push("<div><b>Description:</b> " + desc + "</div>");
+            } else {
+              // Normal text mode (escape)
+              html.push("<div><b>Description:</b> " + escapeHtml(desc) + "</div>");
+            }
+
+          } else {
+            // Normal lines
+            html.push("<div>" + escapeHtml(line) + "</div>");
+          }
+        });
+
+        calendarTooltip.innerHTML = html.join("");
         calendarTooltip.classList.remove("hidden");
         calendarTooltip.style.transform = "none";
+
+        // Positioning logic
         var rect = el.getBoundingClientRect();
         var ttRect = calendarTooltip.getBoundingClientRect();
         var left = rect.left;
@@ -122,10 +153,14 @@
         if (left < 8) left = 8;
         calendarTooltip.style.left = left + "px";
         calendarTooltip.style.top = top + "px";
+
+        // 🔥 Trigger MathJax render only if needed
+        if (window.renderKatex && containsLatex(details)) {
+          renderKatex(calendarTooltip);
+        }
+
       });
-      el.addEventListener("mouseleave", function () {
-        calendarTooltip.classList.add("hidden");
-      });
+
     });
   }
 
