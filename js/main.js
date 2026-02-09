@@ -5,3 +5,4 @@ document.addEventListener("DOMContentLoaded", () => {
     el.style.animationDelay = `${i * 0.3}s`;
   });
 });
+//com
