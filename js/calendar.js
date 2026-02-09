@@ -163,8 +163,11 @@
     calendarError.classList.remove("hidden");
   }
 
+  const scriptUrl = new URL(document.currentScript.src);
+  const basePath = scriptUrl.pathname.replace(/\/js\/[^/]+$/, "");
+  const jsonUrl = basePath + "../assets/calendar.json";
   // ---- ONLY external JSON loading ----
-  fetch("../assets/calendar.json", { cache: "no-cache" })
+  fetch(jsonUrl, { cache: "no-cache" })
     .then(function (r) {
       if (!r.ok) throw new Error("Failed to load calendar: " + r.status);
       return r.json();
