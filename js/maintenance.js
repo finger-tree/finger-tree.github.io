@@ -75,10 +75,11 @@
    
 
   function daysSince(date) {
-    return (Math.abs(date - new Date())) / (24 * 60 * 60 * 1000);
+    return (new Date() - date) / (24 * 60 * 60 * 1000);
   }
 
   function rowClassForDays(days) {
+    if (days < 0) return "maintenance-item--black";
     if (days < 7) return "maintenance-item--green";
     if (days < 30) return "maintenance-item--yellow";
     return "maintenance-item--red";

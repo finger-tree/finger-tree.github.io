@@ -419,6 +419,15 @@
       "category": "biology - neuroscience",
       "start": "2026-01-16T10:00:00",
       "end": "2026-01-16T11:00:00"
+    },
+    {
+      "title": "Final Year project deadline",
+      "description": "final year project",
+      "category": "deadline - final year project",
+      "start": "2026-05-06T23:00:00",
+      "end": "2026-05-06T23:59:59"
     }
+
+
   ]
 }
