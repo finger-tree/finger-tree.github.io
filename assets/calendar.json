@@ -1,6 +1,13 @@
 {
   "events": [
     { 
+      "title": "youtube quantum mechanics",
+      "description": "yale courses 19.Professor Shankar - Quantum Mechanics I",
+      "category": "physics - quantum mechanics",
+      "start": "2026-02-11T09:00:00",
+      "end": "2026-02-11T14:00:00"
+    },
+    { 
       "title": "Graph knowledge map",
       "description": "ideas about representation set, relating subjects set, implementation set, rules set, and moving off of google docs",
       "category": "culture",
